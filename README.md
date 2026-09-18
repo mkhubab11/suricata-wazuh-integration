@@ -2,6 +2,7 @@
 
 Network Intrusion Detection through SIEM and IDS/IPS Integration
 
+---
 ## 📌 Project Overview
 
 This project demonstrates the integration of Suricata, an open-source Network Intrusion Detection and Prevention System (IDS/IPS), with Wazuh, a Security Information and Event Management (SIEM) platform.
@@ -273,6 +274,7 @@ Potential extensions for this project include:
 **Muhammad Khubab**
 
 Domain: SIEM Administration & Network Intrusion Detection (IDS)
+
 LinkedIn: [Muhammad Khubab](https://www.linkedin.com/in/muhammad-khubab-475046204/)
 
 ---
