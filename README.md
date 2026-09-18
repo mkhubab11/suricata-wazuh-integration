@@ -1,7 +1,7 @@
 ## Suricata Integration with Wazuh
 
 Network Intrusion Detection through SIEM and IDS/IPS Integration
----
+
 ## 📌 Project Overview
 
 This project demonstrates the integration of Suricata, an open-source Network Intrusion Detection and Prevention System (IDS/IPS), with Wazuh, a Security Information and Event Management (SIEM) platform.
@@ -12,6 +12,7 @@ The project validates the detection pipeline by attacker machine Kali Linux agai
 
 **Project type**: Cybersecurity / SOC Lab
 **Focus**: SIEM Administration, Network Intrusion Detection, Log Integration, and Threat Hunting
+
 ---
 ## 🎯 Objectives
 
@@ -83,9 +84,10 @@ The project validates the detection pipeline by attacker machine Kali Linux agai
 Install and register the Wazuh agent on the Ubuntu endpoint, then verify that the agent is active and connected to the Wazuh manager.
 <p>
 <img width="1331" height="632" alt="Screenshot 2026-09-16 185303" src="https://github.com/user-attachments/assets/c5c9026f-18ba-408d-86f2-f1138a07b5cd" /> 
-  ```text
+
+  
 The endpoint should appear in the Wazuh dashboard's agent list.
-  ```
+ 
 <img width="1330" height="472" alt="Screenshot 2026-09-17 115955" src="https://github.com/user-attachments/assets/466a2f6a-e27e-4252-867f-cfe5b4f4498f" />
 
 
@@ -172,8 +174,10 @@ sudo nano /var/ossec/etc/ossec.conf
 Add the following localfile configuration inside the existing <ossec_config> element:
 
 xml
+
+```bash
 <!-- Suricata integration with Wazuh -->
-```bash<localfile>
+<localfile>
   <log_format>json</log_format>
   <location>/var/log/suricata/eve.json</location>
 </localfile>
@@ -242,15 +246,15 @@ The project report documented the following findings:
 * The alerts were classified at rule level 3, representing informational/low-severity reconnaissance activity in the documented lab.
 * Alerts retained network context, including source/destination IPs, ports, protocol information, and byte counts.
 
-Important: These results represent the behavior observed in this specific lab environment and ruleset configuration. Detection results may vary depending on Suricata versions, rules, network configuration, and traffic.
+>**Important**: These results represent the behavior observed in this specific lab environment and ruleset configuration. Detection results may vary depending on Suricata versions, rules, network configuration, and traffic.
 ---
 ## 🔐 Ethical and Legal Disclaimer
 
 This project was conducted in a controlled cybersecurity lab environment for educational and defensive security purposes.
 
 Only perform scans and security testing against systems you own or have explicit authorization to test. Do not scan public or third-party systems without permission.
----
 
+---
 ## 🚀 Future Improvements
 
 Potential extensions for this project include:
@@ -269,8 +273,8 @@ Potential extensions for this project include:
 **Muhammad Khubab**
 
 Domain: SIEM Administration & Network Intrusion Detection (IDS)
-
 LinkedIn: [Muhammad Khubab](https://www.linkedin.com/in/muhammad-khubab-475046204/)
+
 ---
 ## 📄 License
 
