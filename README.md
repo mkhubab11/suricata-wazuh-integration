@@ -77,11 +77,12 @@ The project validates the detection pipeline by attacker machine Kali Linux agai
 
 
  ## ⚙️ Implementation
-1. Install the Wazuh Agent on Ubuntu
+**1. Install the Wazuh Agent on Ubuntu**
 
 Install and register the Wazuh agent on the Ubuntu endpoint, then verify that the agent is active and connected to the Wazuh manager.
 
 Verify the service:
+<img width="480" height="170" alt="image" src="https://github.com/user-attachments/assets/802d8656-963d-4005-bd04-72721646d537" />
 
 bash
 sudo systemctl status wazuh-agent
@@ -89,7 +90,7 @@ sudo systemctl status wazuh-agent
 
 The endpoint should appear in the Wazuh dashboard's agent list.
 
-2. Install Suricata
+**2. Install Suricata**
 
 Add the official Suricata stable repository and install Suricata:
 
@@ -106,7 +107,7 @@ sudo systemctl start suricata
 sudo systemctl status suricata
 
 
-3. Download the Emerging Threats Ruleset
+**3. Download the Emerging Threats Ruleset**
 
 Download and extract the Emerging Threats open ruleset:
 
@@ -117,9 +118,9 @@ sudo tar -xvzf emerging.rules.tar.gz
 sudo mkdir -p /etc/suricata/rules
 sudo mv rules/*.rules /etc/suricata/rules/
 
-Note: The commands above follow the project report. For a production environment, review file permissions and avoid unnecessarily broad permissions such as 777.
+**Note**: The commands above follow the project report. For a production environment, review file permissions and avoid unnecessarily broad permissions such as 777.
 
-4. Configure Suricata
+**4. Configure Suricata**
 
 Edit the Suricata configuration file:
 
@@ -150,7 +151,7 @@ Restart Suricata:
 bash
 sudo systemctl restart suricata
 
-5. Integrate Suricata with Wazuh
+**5. Integrate Suricata with Wazuh**
 
 Edit the Wazuh agent configuration:
 
