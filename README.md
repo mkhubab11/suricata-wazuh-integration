@@ -1,6 +1,7 @@
 ## Suricata Integration with Wazuh
 
 Network Intrusion Detection through SIEM and IDS/IPS Integration
+---
 ## 📌 Project Overview
 
 This project demonstrates the integration of Suricata, an open-source Network Intrusion Detection and Prevention System (IDS/IPS), with Wazuh, a Security Information and Event Management (SIEM) platform.
@@ -11,7 +12,7 @@ The project validates the detection pipeline by attacker machine Kali Linux agai
 
 **Project type**: Cybersecurity / SOC Lab
 **Focus**: SIEM Administration, Network Intrusion Detection, Log Integration, and Threat Hunting
-
+---
 ## 🎯 Objectives
 
 * Deploy and configure a Wazuh manager and dashboard.
@@ -21,7 +22,7 @@ The project validates the detection pipeline by attacker machine Kali Linux agai
 * Forward Suricata's `eve.json` alert log to Wazuh.
 * Visualize and analyze Suricata alerts in the Wazuh Threat Hunting module.
 * Examine structured alert fields and network traffic metadata.
-
+---
 ## 🏗️ Lab Architecture
 
                     ┌──────────────────────────┐
@@ -59,7 +60,7 @@ The project validates the detection pipeline by attacker machine Kali Linux agai
                     │  Threat Hunting          │
                     │  Log Analysis            │
                     └──────────────────────────┘
-
+---
 ## 🛠️ Tools and Environment
 
 | Component           | Details                       |
@@ -75,15 +76,16 @@ The project validates the detection pipeline by attacker machine Kali Linux agai
 | Network Interface   | ens33                         |
 | Configuration Files | suricata.yaml, ossec.conf     |
 
-
+---
  ## ⚙️ Implementation
 **1. Install the Wazuh Agent on Ubuntu**
 
 Install and register the Wazuh agent on the Ubuntu endpoint, then verify that the agent is active and connected to the Wazuh manager.
 <p>
-<img width="1331" height="632" alt="Screenshot 2026-09-16 185303" src="https://github.com/user-attachments/assets/c5c9026f-18ba-408d-86f2-f1138a07b5cd" /> <br> <br>
+<img width="1331" height="632" alt="Screenshot 2026-09-16 185303" src="https://github.com/user-attachments/assets/c5c9026f-18ba-408d-86f2-f1138a07b5cd" /> 
+  ```text
 The endpoint should appear in the Wazuh dashboard's agent list.
-  <br>
+  ```
 <img width="1330" height="472" alt="Screenshot 2026-09-17 115955" src="https://github.com/user-attachments/assets/466a2f6a-e27e-4252-867f-cfe5b4f4498f" />
 
 
@@ -93,7 +95,7 @@ sudo systemctl status wazuh-agent
 
 
 <img width="728" height="410" alt="Screenshot 2026-09-17 123415" src="https://github.com/user-attachments/assets/b9d2a0b1-68fe-4427-a154-4cbda5e3b3ca" />
-
+---
 **2. Install Suricata**
 
 Add the official Suricata stable repository and install Suricata:
@@ -112,7 +114,7 @@ sudo systemctl status suricata
 ```
 <img width="737" height="259" alt="Screenshot 2026-09-07 130550" src="https://github.com/user-attachments/assets/3158845c-7e69-4b4e-9689-47b5551ea3c5" />
 
-
+---
 **3. Download the Emerging Threats Ruleset**
 
 Download and extract the Emerging Threats open ruleset:
@@ -124,8 +126,8 @@ sudo mkdir -p /etc/suricata/rules
 sudo mv rules/*.rules /etc/suricata/rules/
 ```
 
-**Note**: The commands above follow the project report. For a production environment, review file permissions and avoid unnecessarily broad permissions such as 777.
-
+> **Note**: The commands above follow the project report. For a production environment, review file permissions and avoid unnecessarily broad permissions such as 777.
+---
 **4. Configure Suricata**
 
 Edit the Suricata configuration file:
@@ -159,7 +161,7 @@ Restart Suricata:
 ```bash
 sudo systemctl restart suricata
 ```
-
+---
 **5. Integrate Suricata with Wazuh**
 
 Edit the Wazuh agent configuration:
@@ -185,7 +187,7 @@ sudo systemctl restart wazuh-agent
 ```
 
 This configuration enables the Wazuh agent to collect Suricata's JSON event log.
-
+---
 ## 🧪 Attack Emulation and Detection
 
 To validate the integration, an Nmap service/version scan was launched from a Kali Linux machine against the Ubuntu endpoint.
@@ -208,7 +210,7 @@ Detection Workflow
 5. The Wazuh agent collects the JSON events.
 6. Wazuh parses and displays the alerts in the dashboard.
 7. Analysts inspect the events through Threat Hunting and Document Details.
-
+---
 ## 🔎 Viewing Alerts in Wazuh
 
 To inspect the generated alerts:
@@ -227,7 +229,7 @@ To inspect the generated alerts:
    * HTTP metadata
    * Suricata signature ID
    * Rule group and severity
-
+---
 ## 📊 Key Findings
 
 The project report documented the following findings:
@@ -241,13 +243,13 @@ The project report documented the following findings:
 * Alerts retained network context, including source/destination IPs, ports, protocol information, and byte counts.
 
 Important: These results represent the behavior observed in this specific lab environment and ruleset configuration. Detection results may vary depending on Suricata versions, rules, network configuration, and traffic.
-
+---
 ## 🔐 Ethical and Legal Disclaimer
 
 This project was conducted in a controlled cybersecurity lab environment for educational and defensive security purposes.
 
 Only perform scans and security testing against systems you own or have explicit authorization to test. Do not scan public or third-party systems without permission.
-
+---
 
 ## 🚀 Future Improvements
 
@@ -261,7 +263,7 @@ Potential extensions for this project include:
 * Adding File Integrity Monitoring and endpoint security telemetry.
 * Testing additional authorized attack simulations.
 * Integrating the project with a broader SOC monitoring workflow.
-
+---
 ## 👨‍💻 Author
 
 **Muhammad Khubab**
@@ -269,7 +271,7 @@ Potential extensions for this project include:
 Domain: SIEM Administration & Network Intrusion Detection (IDS)
 
 LinkedIn: [Muhammad Khubab](https://www.linkedin.com/in/muhammad-khubab-475046204/)
-
+---
 ## 📄 License
 
 This project is intended for educational and portfolio purposes. You may add an open-source license such as the MIT License if you want others to reuse and modify the project.
