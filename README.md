@@ -179,6 +179,7 @@ This configuration enables the Wazuh agent to collect Suricata's JSON event log.
 To validate the integration, an Nmap service/version scan was launched from a Kali Linux machine against the Ubuntu endpoint.
 
 Run the scan from the authorized lab attacker machine:
+<img width="634" height="270" alt="Screenshot 2026-09-16 165535" src="https://github.com/user-attachments/assets/15909109-826d-4d20-a532-c2f642296dce" />
 
 bash
 nmap -sS -sV <ubuntu_ip>
