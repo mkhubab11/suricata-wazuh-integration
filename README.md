@@ -106,7 +106,8 @@ sudo apt-get install suricata -y
 Start and verify the Suricata service:
 ```bash
 sudo systemctl start suricata
-sudo systemctl status suricata```
+sudo systemctl status suricata
+```
 <img width="737" height="259" alt="Screenshot 2026-09-07 130550" src="https://github.com/user-attachments/assets/3158845c-7e69-4b4e-9689-47b5551ea3c5" />
 
 
@@ -118,7 +119,8 @@ cd /tmp/
 curl -LO https://rules.emergingthreats.net/open/suricata-6.0.8/emerging.rules.tar.gz
 sudo tar -xvzf emerging.rules.tar.gz
 sudo mkdir -p /etc/suricata/rules
-sudo mv rules/*.rules /etc/suricata/rules/```
+sudo mv rules/*.rules /etc/suricata/rules/
+```
 
 **Note**: The commands above follow the project report. For a production environment, review file permissions and avoid unnecessarily broad permissions such as 777.
 
@@ -146,19 +148,22 @@ stats:
   enabled: yes
 
 af-packet:
-  - interface: ens33```
+  - interface: ens33
+```
 
 Replace <UBUNTU_IP> with the actual IP address or appropriate network configuration for your lab.
 
 Restart Suricata:
 ```bash
-sudo systemctl restart suricata```
+sudo systemctl restart suricata
+```
 
 **5. Integrate Suricata with Wazuh**
 
 Edit the Wazuh agent configuration:
 ```bash
-sudo nano /var/ossec/etc/ossec.conf```
+sudo nano /var/ossec/etc/ossec.conf
+```
 
 Add the following localfile configuration inside the existing <ossec_config> element:
 
@@ -167,12 +172,15 @@ xml
 ```bash<localfile>
   <log_format>json</log_format>
   <location>/var/log/suricata/eve.json</location>
-</localfile>```
+</localfile>
+```
 <img width="486" height="136" alt="Screenshot 2026-09-07 150221" src="https://github.com/user-attachments/assets/c4de7d7d-5301-4df7-bcca-6ea2d7725983" />
 
 Restart the Wazuh agent:
 
-```bashsudo systemctl restart wazuh-agent```
+```bash
+sudo systemctl restart wazuh-agent
+```
 
 This configuration enables the Wazuh agent to collect Suricata's JSON event log.
 
@@ -183,7 +191,9 @@ To validate the integration, an Nmap service/version scan was launched from a Ka
 Run the scan from the authorized lab attacker machine:
 <img width="634" height="270" alt="Screenshot 2026-09-16 165535" src="https://github.com/user-attachments/assets/15909109-826d-4d20-a532-c2f642296dce" />
 
-```bash nmap -sS -sV <ubuntu_ip>```
+```bash 
+nmap -sS -sV <ubuntu_ip>
+```
 
 Replace <ubuntu_ip> with the IP address of the Ubuntu endpoint.
 
