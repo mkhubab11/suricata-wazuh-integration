@@ -1,4 +1,4 @@
-Suricata Integration with Wazuh
+## Suricata Integration with Wazuh
 
 Network Intrusion Detection through SIEM and IDS/IPS Integration
 📌 Project Overview
