@@ -85,9 +85,7 @@ The endpoint should appear in the Wazuh dashboard's agent list.
 <img width="1330" height="472" alt="Screenshot 2026-09-17 115955" src="https://github.com/user-attachments/assets/466a2f6a-e27e-4252-867f-cfe5b4f4498f" />
 
 
-
-```Bash
-sudo systemctl status wazuh-agent```
+sudo systemctl status wazuh-agent
 
 <img width="728" height="410" alt="Screenshot 2026-09-17 123415" src="https://github.com/user-attachments/assets/b9d2a0b1-68fe-4427-a154-4cbda5e3b3ca" />
 
@@ -124,7 +122,10 @@ sudo mv rules/*.rules /etc/suricata/rules/
 
 Edit the Suricata configuration file:
 
+```bash
 sudo nano /etc/suricata/suricata.yaml
+```
+
 
 Configure the network and ruleset:
 
