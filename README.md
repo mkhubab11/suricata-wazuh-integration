@@ -1,7 +1,7 @@
 ## Suricata Integration with Wazuh
 
 Network Intrusion Detection through SIEM and IDS/IPS Integration
-📌 Project Overview
+## 📌 Project Overview
 
 This project demonstrates the integration of Suricata, an open-source Network Intrusion Detection and Prevention System (IDS/IPS), with Wazuh, a Security Information and Event Management (SIEM) platform.
 
@@ -9,10 +9,10 @@ The integration forwards Suricata is eve.json alert logs to the Wazuh agent, all
 
 The project validates the detection pipeline by attacker machine Kali Linux against an Ubuntu endpoint.
 
-Project type: Cybersecurity / SOC Lab
-Focus: SIEM Administration, Network Intrusion Detection, Log Integration, and Threat Hunting
+**Project type**: Cybersecurity / SOC Lab
+**Focus**: SIEM Administration, Network Intrusion Detection, Log Integration, and Threat Hunting
 
-🎯 Objectives
+## 🎯 Objectives
 
 * Deploy and configure a Wazuh manager and dashboard.
 * Register an Ubuntu endpoint as a monitored Wazuh agent.
@@ -22,7 +22,7 @@ Focus: SIEM Administration, Network Intrusion Detection, Log Integration, and Th
 * Visualize and analyze Suricata alerts in the Wazuh Threat Hunting module.
 * Examine structured alert fields and network traffic metadata.
 
-🏗️ Lab Architecture
+## 🏗️ Lab Architecture
 
                     ┌──────────────────────────┐
                     │     Kali Linux           │
@@ -60,7 +60,7 @@ Focus: SIEM Administration, Network Intrusion Detection, Log Integration, and Th
                     │  Log Analysis            │
                     └──────────────────────────┘
 
-🛠️ Tools and Environment
+## 🛠️ Tools and Environment
 
 | Component           | Details                       |
 | ------------------- | ----------------------------- |
@@ -76,7 +76,7 @@ Focus: SIEM Administration, Network Intrusion Detection, Log Integration, and Th
 | Configuration Files | suricata.yaml, ossec.conf     |
 
 
- ⚙️ Implementation
+ ## ⚙️ Implementation
 1. Install the Wazuh Agent on Ubuntu
 
 Install and register the Wazuh agent on the Ubuntu endpoint, then verify that the agent is active and connected to the Wazuh manager.
@@ -173,7 +173,7 @@ sudo systemctl restart wazuh-agent
 
 This configuration enables the Wazuh agent to collect Suricata's JSON event log.
 
- 🧪 Attack Emulation and Detection
+## 🧪 Attack Emulation and Detection
 
 To validate the integration, an Nmap service/version scan was launched from a Kali Linux machine against the Ubuntu endpoint.
 
@@ -194,7 +194,7 @@ Detection Workflow
 6. Wazuh parses and displays the alerts in the dashboard.
 7. Analysts inspect the events through Threat Hunting and Document Details.
 
-🔎 Viewing Alerts in Wazuh
+## 🔎 Viewing Alerts in Wazuh
 
 To inspect the generated alerts:
 
@@ -213,7 +213,7 @@ To inspect the generated alerts:
    * Suricata signature ID
    * Rule group and severity
 
-📊 Key Findings
+## 📊 Key Findings
 
 The project report documented the following findings:
 
@@ -227,14 +227,14 @@ The project report documented the following findings:
 
 Important: These results represent the behavior observed in this specific lab environment and ruleset configuration. Detection results may vary depending on Suricata versions, rules, network configuration, and traffic.
 
-🔐 Ethical and Legal Disclaimer
+## 🔐 Ethical and Legal Disclaimer
 
 This project was conducted in a controlled cybersecurity lab environment for educational and defensive security purposes.
 
 Only perform scans and security testing against systems you own or have explicit authorization to test. Do not scan public or third-party systems without permission.
 
 
-🚀 Future Improvements
+## 🚀 Future Improvements
 
 Potential extensions for this project include:
 
@@ -247,14 +247,14 @@ Potential extensions for this project include:
 * Testing additional authorized attack simulations.
 * Integrating the project with a broader SOC monitoring workflow.
 
-👨‍💻 Author
+## 👨‍💻 Author
 
-Muhammad Khubab
+**Muhammad Khubab**
 
 Domain: SIEM Administration & Network Intrusion Detection (IDS)
 
 LinkedIn: [Muhammad Khubab](https://www.linkedin.com/in/muhammad-khubab-475046204/)
 
-📄 License
+## 📄 License
 
 This project is intended for educational and portfolio purposes. You may add an open-source license such as the MIT License if you want others to reuse and modify the project.
