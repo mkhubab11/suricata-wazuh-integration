@@ -80,9 +80,9 @@ The project validates the detection pipeline by attacker machine Kali Linux agai
 **1. Install the Wazuh Agent on Ubuntu**
 
 Install and register the Wazuh agent on the Ubuntu endpoint, then verify that the agent is active and connected to the Wazuh manager.
-<figure>
+
 <img width="1331" height="632" alt="Screenshot 2026-09-16 185303" src="https://github.com/user-attachments/assets/c5c9026f-18ba-408d-86f2-f1138a07b5cd" />
-</figure>  
+ 
 The endpoint should appear in the Wazuh dashboard's agent list.
 <img width="1330" height="472" alt="Screenshot 2026-09-17 115955" src="https://github.com/user-attachments/assets/466a2f6a-e27e-4252-867f-cfe5b4f4498f" />
 
