@@ -82,10 +82,12 @@ The project validates the detection pipeline by attacker machine Kali Linux agai
 Install and register the Wazuh agent on the Ubuntu endpoint, then verify that the agent is active and connected to the Wazuh manager.
 
 Verify the service:
-<img width="480" height="170" alt="image" src="https://github.com/user-attachments/assets/802d8656-963d-4005-bd04-72721646d537" />
+<img width="1330" height="472" alt="Screenshot 2026-09-17 115955" src="https://github.com/user-attachments/assets/466a2f6a-e27e-4252-867f-cfe5b4f4498f" />
+
 
 bash
 sudo systemctl status wazuh-agent
+<img width="728" height="410" alt="Screenshot 2026-09-17 123415" src="https://github.com/user-attachments/assets/b9d2a0b1-68fe-4427-a154-4cbda5e3b3ca" />
 
 
 The endpoint should appear in the Wazuh dashboard's agent list.
@@ -98,6 +100,7 @@ bash
 sudo add-apt-repository ppa:oisf/suricata-stable
 sudo apt-get update
 sudo apt-get install suricata -y
+<img width="728" height="290" alt="Screenshot 2026-09-07 130644" src="https://github.com/user-attachments/assets/eb6d902f-caeb-4d29-9387-b85c7f446a09" />
 
 
 Start and verify the Suricata service:
@@ -105,6 +108,7 @@ Start and verify the Suricata service:
 bash
 sudo systemctl start suricata
 sudo systemctl status suricata
+<img width="737" height="259" alt="Screenshot 2026-09-07 130550" src="https://github.com/user-attachments/assets/3158845c-7e69-4b4e-9689-47b5551ea3c5" />
 
 
 **3. Download the Emerging Threats Ruleset**
@@ -166,6 +170,7 @@ xml
   <log_format>json</log_format>
   <location>/var/log/suricata/eve.json</location>
 </localfile>
+<img width="486" height="136" alt="Screenshot 2026-09-07 150221" src="https://github.com/user-attachments/assets/c4de7d7d-5301-4df7-bcca-6ea2d7725983" />
 
 Restart the Wazuh agent:
 
