@@ -86,7 +86,7 @@ The endpoint should appear in the Wazuh dashboard's agent list.
 
 
 
-'sudo systemctl status wazuh-agent'
+'''sudo systemctl status wazuh-agent'''
 
 <img width="728" height="410" alt="Screenshot 2026-09-17 123415" src="https://github.com/user-attachments/assets/b9d2a0b1-68fe-4427-a154-4cbda5e3b3ca" />
 
