@@ -98,7 +98,8 @@ Add the official Suricata stable repository and install Suricata:
 ```bash
 sudo add-apt-repository ppa:oisf/suricata-stable
 sudo apt-get update
-sudo apt-get install suricata -y ```
+sudo apt-get install suricata -y
+```
 <img width="728" height="290" alt="Screenshot 2026-09-07 130644" src="https://github.com/user-attachments/assets/eb6d902f-caeb-4d29-9387-b85c7f446a09" />
 
 
