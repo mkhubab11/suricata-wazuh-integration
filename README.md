@@ -81,14 +81,14 @@ The project validates the detection pipeline by attacker machine Kali Linux agai
 
 Install and register the Wazuh agent on the Ubuntu endpoint, then verify that the agent is active and connected to the Wazuh manager.
 
-Verify the service:
 <img width="1330" height="472" alt="Screenshot 2026-09-17 115955" src="https://github.com/user-attachments/assets/466a2f6a-e27e-4252-867f-cfe5b4f4498f" />
 
 
-bash
-sudo systemctl status wazuh-agent
-<img width="728" height="410" alt="Screenshot 2026-09-17 123415" src="https://github.com/user-attachments/assets/b9d2a0b1-68fe-4427-a154-4cbda5e3b3ca" />
 
+sudo systemctl status wazuh-agent
+<img width="1331" height="632" alt="Screenshot 2026-09-16 185303" src="https://github.com/user-attachments/assets/c5c9026f-18ba-408d-86f2-f1138a07b5cd" />
+
+<img width="728" height="410" alt="Screenshot 2026-09-17 123415" src="https://github.com/user-attachments/assets/b9d2a0b1-68fe-4427-a154-4cbda5e3b3ca" />
 
 The endpoint should appear in the Wazuh dashboard's agent list.
 
@@ -96,7 +96,6 @@ The endpoint should appear in the Wazuh dashboard's agent list.
 
 Add the official Suricata stable repository and install Suricata:
 
-bash
 sudo add-apt-repository ppa:oisf/suricata-stable
 sudo apt-get update
 sudo apt-get install suricata -y
@@ -105,7 +104,6 @@ sudo apt-get install suricata -y
 
 Start and verify the Suricata service:
 
-bash
 sudo systemctl start suricata
 sudo systemctl status suricata
 <img width="737" height="259" alt="Screenshot 2026-09-07 130550" src="https://github.com/user-attachments/assets/3158845c-7e69-4b4e-9689-47b5551ea3c5" />
@@ -115,7 +113,6 @@ sudo systemctl status suricata
 
 Download and extract the Emerging Threats open ruleset:
 
-bash
 cd /tmp/
 curl -LO https://rules.emergingthreats.net/open/suricata-6.0.8/emerging.rules.tar.gz
 sudo tar -xvzf emerging.rules.tar.gz
@@ -128,7 +125,6 @@ sudo mv rules/*.rules /etc/suricata/rules/
 
 Edit the Suricata configuration file:
 
-bash
 sudo nano /etc/suricata/suricata.yaml
 
 Configure the network and ruleset:
@@ -152,14 +148,12 @@ Replace <UBUNTU_IP> with the actual IP address or appropriate network configurat
 
 Restart Suricata:
 
-bash
 sudo systemctl restart suricata
 
 **5. Integrate Suricata with Wazuh**
 
 Edit the Wazuh agent configuration:
 
-bash
 sudo nano /var/ossec/etc/ossec.conf
 
 Add the following localfile configuration inside the existing <ossec_config> element:
@@ -174,7 +168,6 @@ xml
 
 Restart the Wazuh agent:
 
-bash
 sudo systemctl restart wazuh-agent
 
 This configuration enables the Wazuh agent to collect Suricata's JSON event log.
@@ -186,7 +179,6 @@ To validate the integration, an Nmap service/version scan was launched from a Ka
 Run the scan from the authorized lab attacker machine:
 <img width="634" height="270" alt="Screenshot 2026-09-16 165535" src="https://github.com/user-attachments/assets/15909109-826d-4d20-a532-c2f642296dce" />
 
-bash
 nmap -sS -sV <ubuntu_ip>
 
 Replace <ubuntu_ip> with the IP address of the Ubuntu endpoint.
